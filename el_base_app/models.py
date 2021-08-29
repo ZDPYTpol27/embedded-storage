@@ -1,4 +1,3 @@
-
 from django.db import models
 
 
@@ -49,7 +48,7 @@ class Capacitor(EmbeddedElementBase):
      )
 
      capacity = models.FloatField()
-     unit = models.CharField(max_length=5)  # pf lub nf lub mkf
+     unit = models.CharField(max_length=5, choices=UNIT_CHOICES)
      voltage = models.IntegerField()
 
 
@@ -60,13 +59,31 @@ class Diode(EmbeddedElementBase):
 
 
 class Transistor(EmbeddedElementBase):
+     UNIT_PNP = 'pnp'
+     UNIT_NPN = 'npn'
+
+
+     UNIT_CHOICES = (
+        (UNIT_PNP, UNIT_PNP),
+        (UNIT_NPN, UNIT_NPN),
+     )
+
      name = models.CharField(max_length=20)
-     junction_type = models.CharField(max_length=5)  # pnp lub npn
+     junction_type = models.CharField(max_length=5, choices=UNIT_CHOICES)  # pnp lub npn
      maximum_voltage = models.IntegerField()
      collector_current = models.IntegerField()
      gain = models.IntegerField()
 
 
 class Chip(EmbeddedElementBase):
+     UNIT_ANALOG = 'analog'
+     UNIT_DIGITAL = 'digital'
+
+     UNIT_CHOICES = (
+          (UNIT_ANALOG, UNIT_ANALOG),
+          (UNIT_DIGITAL, UNIT_DIGITAL),
+     )
+
      name = models.CharField(max_length=20)
-     microcircuit_type = models.CharField(max_length=10)  # analog lub digital
+     microcircuit_type = models.CharField(max_length=10, choices=UNIT_CHOICES)  # analog lub digital
+
