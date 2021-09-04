@@ -20,6 +20,10 @@ from django.urls import path
 #     path('admin/', admin.site.urls),
 # ]
 
+
+
+
+
 from django.contrib import admin
 from django.urls import path
 from el_base_app import views
