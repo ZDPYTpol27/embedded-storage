@@ -11,22 +11,13 @@ from .models import Transistor
 from .models import Chip
 
 
-# получение данных из бд
-def index(request):
-    people = Resistors.objects.all()
-    return render(request, "index.html", {"people": people})
-
-
-# сохранение данных в бд
-def create(request):
-    if request.method == "POST":
-        tom = Resistors()
-        tom.name = request.POST.get("name")
-        tom.age = request.POST.get("age")
-        tom.save()
-    return HttpResponseRedirect("/")
-
 
 class ResistorListView(ListView):
     model = Resistors
-    template_name =
+    # template_name =
+    # resistance = resistance
+
+
+def home(request):
+    return render(request, 'html_code/home.html')
+
