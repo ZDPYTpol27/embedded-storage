@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class EmbeddedElementBase(models.Model):
+class EmbeddedElementBase(models.Model):     # my commit add to directory
      dimensions = models.FloatField()
      number_of_pcs = models.IntegerField()
      row = models.IntegerField()
