@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="column is-full">
+    <h3 class="title">{{ title }}</h3>
+<br>
+    <dev class="registros">
+        <div class="columns is-mobile" >
+            {% for head in header %}
+                <span class="box column is-1">
+
+                    {{ head.title }}
+                </span>
+            {% endfor %}
+        </div>
+    </dev>
+    {% for resistor in registros %}
+            <div class="columns" >
+                {% for head in resistor.header.values %}
+                    <span class="box column is-1">
+                    {{ head }}
+                    </span>
+                {% endfor %}
+            </div>
+    {% endfor %}
+</div>
+{% endblock %}
