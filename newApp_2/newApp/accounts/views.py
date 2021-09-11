@@ -11,3 +11,4 @@ def singup(request):
     else:
         form = UserCreationForm()
     return render(request, 'singup.html', {'form':form , 'is_auth': request.user.is_authenticated})
+

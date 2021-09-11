@@ -38,6 +38,9 @@
                         <a href="{% url 'ell_list:get_table' type='Chip' %}" class="navbar-item">
                             Chip
                         </a>
+                        <a href="{% url 'account:singup' %}" class="navbar-item">
+                            Logout
+                        </a>
                     {% else %}
                         <a href="{% url 'account:singup' %}" class="navbar-item">
                             Sing Up
