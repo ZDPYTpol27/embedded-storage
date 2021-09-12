@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="column is-full">
+    <h3 class="title">{{ title }}</h3>
+<br>
+    <div class="columns is-mobile">
+        <form class="form-inline box column is-full columns">
+            <input class="form-control column input is-11" type="search" placeholder="Search" aria-label="Search" name="search">
+            <button class="button is-info column input is-1" type="submit">Search</button>
+        </form>
+    </div>
+<br>
+    <div class="registros">
+        <div class="columns is-mobile" >
+            {% for head in header %}
+                <span class="box column is-1">
+                    {{ head.title }}
+                </span>
+            {% endfor %}
+        </div>
+    </div>
+    {% for resistor in registros %}
+            <div class="columns" >
+                {% for head in resistor.header.values %}
+                    <span class="box column is-1">
+                    {{ head }}
+                    </span>
+                {% endfor %}
+            </div>
+    {% endfor %}
+</div>
+{% endblock %}
